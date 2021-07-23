@@ -1,0 +1,21 @@
+{% include head.html %}
+	<main>
+		<section class="title">
+			<h2>Projects</h2>
+		</section>
+		<section class="content">
+			{% if site.projects != empty %}
+				{% for project in site.projects %}
+				<article>
+					<h3>{{ project.title }}</h3>
+					{{ project.content }}
+				</article>
+				{% endfor %}
+			{% else %}
+				<article>
+					<p>Stay tuned ...</p>
+				</article>
+			{% endif %}
+		</section>
+	</main>
+{% include foot.html %}

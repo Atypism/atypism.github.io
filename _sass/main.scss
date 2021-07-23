@@ -1,0 +1,188 @@
+$breakpoint: 900px;
+
+body {
+	font-family: "Lato", sans-serif;
+	font-size: 16px;
+	color: #000;
+}
+
+header {
+	width: 100%;
+	height: 40vw;
+	background: #000;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	
+	background: url("/assets/images/banner-home.jpg") center center no-repeat;
+	background-size: cover;
+
+	a {
+		color: #069;
+		&:hover {
+			color: inherit;
+			opacity: .5;
+			text-decoration: none;
+		}
+	}
+
+	a.logo {
+		display: flex;
+		flex-direction: row;
+		padding: 10px;
+
+		img {
+			display: block;
+			height:120px;
+			width:auto;
+			margin: 0 5px;
+		}
+		h1,
+		p {
+			display: none;
+		}
+	}
+}
+
+@media (max-width: $breakpoint) {
+	
+	header {
+		height: 50vw;
+	
+		a.logo {
+	
+			img {
+				height:60px;
+			}
+		}
+	}
+}
+
+main {
+	display: flex;
+	flex-direction: row; 
+	align-items: flex-start;
+	justify-items: flex-start;
+	min-height: calc(100vh);
+	word-break: normal;
+	overflow-wrap: break-word;
+	padding: 20px;
+
+	h1,
+	h2,
+	h3 {
+		position: relative;
+		&:not(.logo) {
+			background: linear-gradient(to top left, #3D2E24, #A1A3AE);
+			-webkit-background-clip: text;
+			-webkit-text-fill-color: transparent;
+			font-family: 'Josefin Sans', sans-serif;
+			line-height: 1.2em;
+		}
+	}
+
+	h1 {
+		font-size: 80px;
+	}
+
+	h2 {
+		font-size: 60px;
+	}
+
+	h3 {
+		margin-top: 20px;
+		font-size: 40px;
+		&:after {
+			content: "";
+			display: block;
+			width: 40px;
+			height: 4px;
+			margin: 10px 0 20px 0;
+			background: #A1A3AE;
+		}
+	}
+
+	p {
+		margin: 10px 0;
+		strong {
+			font-weight: bold;
+		}
+	}
+
+	a {
+		color: #1766b0;
+	}
+
+	section {
+		width: calc(100vw / 3);
+		padding: 20px;
+		
+		article {
+			&:not(:first-child) {
+				margin-top: 80px;
+			}
+		}
+		
+		&.terms {
+			h3 {
+				&:not(:first-of-type) {
+					margin-top: 40px;
+				}
+			}
+		}
+	}
+}
+
+@media (max-width: $breakpoint) {
+	
+	main {
+		flex-direction: column;
+		section {
+			width: auto;
+			h3 {
+				margin-top: 0;
+			}
+		}
+	}
+
+}
+
+footer {
+	height: 40px;
+	padding: 10px 0;
+	margin: 0 40px;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	font-size: 10px;
+	line-height: 20px;
+	border-top: solid 1px #eee;
+	nav {
+		a {
+			color: #ccc;
+		}
+		&.social {
+			a {
+				img {
+					display: block;
+					height: 18px;
+					width: auto;
+					opacity: 1;
+					transition: all ease-in-out .15s;
+					&:hover {
+						opacity: .5;
+					}
+				}
+			}
+		}
+	}
+}
+
+@media (max-width: $breakpoint) {
+	
+	footer {
+		margin: 0 10px;
+	}
+
+}

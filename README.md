@@ -1,2 +1,3 @@
-# atypism.github.io
-Website
+# Website
+
+Atypism website

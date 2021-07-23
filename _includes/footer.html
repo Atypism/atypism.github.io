@@ -1,0 +1,12 @@
+<footer>
+	<nav class="legals">
+		{% for legal in site.legals %}
+		<a href="{{ legal.url }}">{{ legal.title }}</a>
+		{% endfor %}
+	</nav>
+	<nav class="social">
+		<a href="https://www.linkedin.com/company/atypism" target="_blank">
+			<img src="/assets/images/linkedin.svg" alt="LinkedIn" />
+		</a>
+	</nav>
+</footer>
