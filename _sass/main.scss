@@ -2,20 +2,19 @@ $breakpoint: 900px;
 
 body {
 	font-family: "Lato", sans-serif;
-	font-size: 16px;
-	color: #000;
+	font-size: 18px;
+	color: #3D2E24;
 }
 
 header {
 	width: 100%;
 	height: 40vw;
-	background: #000;
 	display: flex;
 	flex-direction: row;
 	align-items: center;
 	justify-content: center;
 	
-	background: url("/assets/images/banner-home.jpg") center center no-repeat;
+	background: #000 url("/assets/images/banner-home.jpg") center center no-repeat;
 	background-size: cover;
 
 	a {
@@ -34,7 +33,7 @@ header {
 
 		img {
 			display: block;
-			height:120px;
+			height:10vw;
 			width:auto;
 			margin: 0 5px;
 		}
@@ -45,26 +44,12 @@ header {
 	}
 }
 
-@media (max-width: $breakpoint) {
-	
-	header {
-		height: 50vw;
-	
-		a.logo {
-	
-			img {
-				height:60px;
-			}
-		}
-	}
-}
-
 main {
 	display: flex;
 	flex-direction: row; 
 	align-items: flex-start;
 	justify-items: flex-start;
-	min-height: calc(100vh);
+	min-height: calc(100vh - 40vw - 40px);
 	word-break: normal;
 	overflow-wrap: break-word;
 	padding: 20px;
@@ -73,13 +58,11 @@ main {
 	h2,
 	h3 {
 		position: relative;
-		&:not(.logo) {
-			background: linear-gradient(to top left, #3D2E24, #A1A3AE);
-			-webkit-background-clip: text;
-			-webkit-text-fill-color: transparent;
-			font-family: 'Josefin Sans', sans-serif;
-			line-height: 1.2em;
-		}
+		font-family: "Josefin Sans", sans-serif;
+		line-height: 1.2em;
+		background: linear-gradient(to top left, #3D2E24, #A1A3AE);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
 	}
 
 	h1 {
@@ -91,14 +74,15 @@ main {
 	}
 
 	h3 {
-		margin-top: 20px;
+		margin: 20px 0 40px 0;
 		font-size: 40px;
 		&:after {
 			content: "";
+			position: absolute;
+			bottom: -18px;
 			display: block;
 			width: 40px;
 			height: 4px;
-			margin: 10px 0 20px 0;
 			background: #A1A3AE;
 		}
 	}
@@ -155,12 +139,17 @@ footer {
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
-	font-size: 10px;
+	font-size: 8px;
 	line-height: 20px;
 	border-top: solid 1px #eee;
 	nav {
-		a {
-			color: #ccc;
+		a,
+		span {
+			color: #ddd;
+			text-transform: uppercase;
+			&:not(:last-child) {
+				margin-right: 10px;
+			}
 		}
 		&.social {
 			a {
